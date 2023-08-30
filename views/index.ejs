@@ -7,6 +7,24 @@
     <title>Express</title>
 </head>
 <body>
-    <h2><%= title %></h2>
+    <h1><%= locals.title %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Text</th>
+                <th>User</th>
+                <th>Added</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < locals.messages.length; i++) {%>
+                <tr>
+                    <td><%= messages[i].text %></td>
+                    <td><%= messages[i].user %></td>
+                    <td><%= messages[i].added %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </body>
 </html>
