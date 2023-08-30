@@ -6,6 +6,12 @@
     <title>New Message</title>
 </head>
 <body>
-    <h1>Enter the new message</h1>
+    <h1>Create a new message</h1>
+
+    <form action="/new" method="post">
+        <input type="text" name="author" placeholder="Author Name">
+        <input type="text" name="message" placeholder="Message Text">
+        <button type="submit">Add message</button>
+    </form>
 </body>
 </html>
