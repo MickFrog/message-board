@@ -1,6 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  min-height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  padding: 1rem;
+  font-size: clamp(1rem, 2vmin + 10px, 1.4rem);
+  padding-left: clamp(10px, 2vmin + 15px, 4rem);
+  background-color: #cbdfbd;
+  width: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.messages-container {
+  width: clamp(15rem, 80vw, 60rem);
+  padding: 0.5rem 0;
+  border: 1px solid black;
+}
+
+.message {
+  padding: 0.6rem 0 0.6rem 0.5rem;
+  margin: 20px 10px;
+  border-radius: 10px;
+  background-color: #00b7ff;
+  position: relative;
+}
+
+.message::before {
+  position: absolute;
+  content: attr(data-user);
+  padding: 2px;
+  top: -15px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.message::after {
+  position: absolute;
+  display: none;
+  content: attr(data-added);
+  padding: 2px;
+  right: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.message:hover::after {
+  display: initial;
+}
+
+.user {
+  transform: translateY(-20px);
+  background-color: gray;
+  width: max-content;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  background-color: #32322c;
+  padding: 1rem;
+  color: white;
 }
 
 a {
