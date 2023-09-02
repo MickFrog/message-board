@@ -84,6 +84,7 @@ main {
 form {
   border: none;
   text-align: center;
+  margin: 10px 5px;
 
   display: flex;
   flex-flow: column nowrap;
@@ -97,7 +98,6 @@ textarea {
 
   border: none;
   padding: 0.4rem;
-  margin: 10px 5px;
 }
 
 textarea {
