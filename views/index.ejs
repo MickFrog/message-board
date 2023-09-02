@@ -13,11 +13,19 @@
     <main>
       <div class="messages-container">
         <% for (let i = 0; i < locals.messages.length; i++) {%>
-        <div class="message" data-user=<%= messages[i].user %> data-added=<%= messages[i].added.toLocaleString().replace(',', "") %>>
-          <p class="text"><%= messages[i].text %></p>
+        <div class="message" data-user=<%= locals.messages[i].user.toString() %> 
+            data-added=<%= locals.messages[i].added.toLocaleString().replace(',', "") %>>
+          <p class="text"><%= locals.messages[i].text %></p>
         </div>
         <% } %>
       </div>
+
+      <form action="/" method="post">
+          <h3>Add new message</h3>
+          <input type="text" name="author" placeholder="Author Name">
+          <textarea type="text" name="message" placeholder="Message Text"></textarea>
+          <button type="submit">Add message</button>
+        </form>
     </main>
     <footer>
       Copyright&nbsp;&copy;&nbsp;<a

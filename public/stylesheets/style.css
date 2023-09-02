@@ -30,13 +30,14 @@ main {
   flex: 1 0 auto;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
 }
 
 .messages-container {
   width: clamp(15rem, 80vw, 60rem);
   padding: 0.5rem 0;
-  height: 70vh;
+  max-height: 70vh;
 
   overflow-y: auto;
 }
@@ -78,6 +79,44 @@ main {
   transform: translateY(-20px);
   background-color: gray;
   width: max-content;
+}
+
+form {
+  border: none;
+  text-align: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+input[type="text"],
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+
+  border: none;
+  padding: 0.4rem;
+  margin: 10px 5px;
+}
+
+textarea {
+  resize: vertical;
+  max-height: 8rem;
+}
+
+button {
+  width: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ccc;
 }
 
 footer {
