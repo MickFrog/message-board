@@ -15,18 +15,20 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
 header {
   padding: 1rem;
   font-size: clamp(1rem, 2vmin + 10px, 1.4rem);
   padding-left: clamp(10px, 2vmin + 15px, 4rem);
-  background-color: #cbdfbd;
-  width: 100%;
+  text-align: center;
 }
 
 main {
   flex: 1 0 auto;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -34,7 +36,9 @@ main {
 .messages-container {
   width: clamp(15rem, 80vw, 60rem);
   padding: 0.5rem 0;
-  border: 1px solid black;
+  height: 70vh;
+
+  overflow-y: auto;
 }
 
 .message {
@@ -43,6 +47,8 @@ main {
   border-radius: 10px;
   background-color: #00b7ff;
   position: relative;
+
+  word-wrap: break-word;
 }
 
 .message::before {
