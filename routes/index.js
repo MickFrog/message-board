@@ -1,21 +1,12 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-let messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+const Message = require("../models/message");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
+  const messages = await Message.find();
+
   res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
