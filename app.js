@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -12,8 +14,8 @@ const mongoose = require("mongoose");
 
 // setup connection to mongoDB
 mongoose.set("strictQuery", false);
-const mongoDB =
-  "mongodb+srv://admin:admin123@cluster0.w7mwqjr.mongodb.net/message_board?retryWrites=true&w=majority";
+
+const mongoDB = process.env.MONGO_KEY;
 
 async function main() {
   await mongoose.connect(mongoDB);
