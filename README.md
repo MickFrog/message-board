@@ -2,7 +2,7 @@
 
 This is a simple fullstack project that is similar to a chat room where users can come and add their messages anonymously.
 
-The live app can be checked out [here](#)
+The live app can be checked out [here](https://message-board-production-b120.up.railway.app/)
 
 ## Features
 
