@@ -8,6 +8,25 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
+const mongoose = require("mongoose");
+
+// setup connection to mongoDB
+mongoose.set("strictQuery", false);
+const mongoDB =
+  "mongodb+srv://admin:admin123@cluster0.w7mwqjr.mongodb.net/message_board?retryWrites=true&w=majority";
+
+async function main() {
+  await mongoose.connect(mongoDB);
+}
+
+// connect to mongoDB
+main().catch((err) => console.log(err));
+
+// add seed data
+// populateDB().catch((err) => console.log("Populating error"));
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
