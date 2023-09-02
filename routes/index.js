@@ -10,13 +10,15 @@ router.get("/", async function (req, res, next) {
   res.render("index", { title: "Mini Messageboard", messages: messages });
 });
 
-router.post("/", function (req, res, next) {
+router.post("/", async function (req, res, next) {
   if (req.body.author !== "" || req.body.message !== "") {
-    messages.push({
+    const newMsg = new Message({
       text: req.body.message,
       user: req.body.author,
       added: new Date(),
     });
+
+    await newMsg.save();
   }
 
   res.redirect("/");
