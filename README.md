@@ -24,7 +24,7 @@ The live app can be checked out [here](https://message-board-production-b120.up.
 1. Clone Project
 
 ```
-git clone git@github.com:MickFrog/mick-chat.git
+git clone git@github.com:MickFrog/message-board.git
 cd message-board
 npm install
 npm run serverstart
